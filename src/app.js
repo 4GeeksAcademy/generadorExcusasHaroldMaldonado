@@ -6,14 +6,24 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 
-let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
-let action = ['ate', 'peed', 'crushed', 'broke'];
-let what = ['my homework', 'my phone', 'the car'];
+let who = ['The dog', 'My grandma', 'The mailman', 'My bird', 'My Cat', 'Peter', 'Roberto', 'Maria'];
+let action = ['ate', 'peed', 'crushed', 'broke', 'Burned'];
+let what = ['my homework', 'my phone', 'the car', 'my Bike', 'my Cellphone'];
 let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
 
+function getRandomNumber(min , max){
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandom(anyArray){
+  let max = anyArray.length - 1;
+  let min = 0;
+  let random = getRandomNumber(min , max);
+  return anyArray[random];
+}
 
 window.onload = function() {
   //write your code here
   console.log("Hello Rigo from the console!");
-  document.querySelector('#excuse').innerHTML = "Hello!"
+  document.querySelector('#excuse').innerHTML = getRandom(who) + " " + getRandom(action) + " " + getRandom(what) + " " + getRandom(when)
 };
